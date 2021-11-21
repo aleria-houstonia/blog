@@ -12,14 +12,14 @@ const Blog = () => {
             <div className={styles.blogList}>
                 <ToolHeader />
                 <div className={styles.blogSearch}>
-                    <Input placeholder="Поиск по постам" />
+                    <Input placeholder="Поиск по постам" name="searchvalue" />
                 </div>
                 <BlogCard />
                 <BlogCard />
                 <BlogCard />
 
                 <div className={styles.blogDownload}>
-                    <Button text="Загрузить еще" />
+                    <Button text="Загрузить еще" type="button" />
                 </div>
             </div>
         </MainContainer>
