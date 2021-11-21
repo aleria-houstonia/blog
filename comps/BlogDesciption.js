@@ -1,9 +1,10 @@
+import React from "react";
 import styles from "../styles/BlogDesc.module.css";
-import ToolHeader from "../comps/ToolHeader";
+import ToolBlogList from "../comps/ToolBlogList";
 const BlogDesciption = () => {
     return (
         <div className={styles.blogDesc}>
-            <ToolHeader />
+            <ToolBlogList />
             <div className={styles.blogDescImg}>
                 <img src="http://almode.ru/uploads/posts/2021-03/1615880258_58-p-natsionalnaya-odezhda-mordva-erzya-63.jpg" />
             </div>

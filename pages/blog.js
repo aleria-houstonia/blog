@@ -1,9 +1,11 @@
+import React from "react";
 import BlogCard from "../comps/BlogCard";
 import Button from "../comps/Button/Button";
 import Input from "../comps/Input/Input";
 import MainContainer from "../comps/MainContainer";
 import ToolHeader from "../comps/ToolHeader";
 import styles from "../styles/Blog.module.css";
+
 const Blog = () => {
     return (
         <MainContainer>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import type { NextPage } from "next";
 // import { useForm } from "react-hook-form";
 // import moment from "moment";
@@ -7,6 +7,7 @@ import type { NextPage } from "next";
 // import styles from "styles/Home.module.scss";
 import BlogDescription from "../comps/BlogDesciption";
 import MainContainer from "../comps/MainContainer";
+
 const Home: NextPage = () => {
     // const { register, handleSubmit } = useForm();
     // const onSubmit = (data: any) =>
@@ -20,7 +21,7 @@ const Home: NextPage = () => {
         <div>
             <MainContainer>
                 <BlogDescription />
-            </MainContainer>{" "}
+            </MainContainer>
         </div>
     );
 };

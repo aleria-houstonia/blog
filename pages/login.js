@@ -1,8 +1,10 @@
+import React from "react";
 import Button from "../comps/Button/Button";
 import Input from "../comps/Input/Input";
 import Logo from "../comps/Logo";
 import styles from "../styles/Login.module.scss";
 import MainContainer from "../comps/MainContainer";
+
 const Login = () => {
     return (
         <>

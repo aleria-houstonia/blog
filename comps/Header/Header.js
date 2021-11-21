@@ -1,6 +1,4 @@
-// import { Battery } from "../../assets/img/Battery.svg";
-// import { Wifi } from "../../assets/img/Wifi.svg";
-// import { CelConnection } from "../../assets/img/Cellular Connection.svg";
+import React from "react";
 import Battery from "../Battery";
 import Cellular from "../Cellular";
 import Wifi from "../Wifi";
