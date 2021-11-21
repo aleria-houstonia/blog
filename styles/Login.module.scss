@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
+.loginCenter {
+    max-width: 375px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .logo {
+        margin-bottom: 19px;
+    }
+    .loginTitle {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 120%;
+        color: #baaba0;
+        margin-bottom: 5px;
+    }
+    .title1 {
+        font-family: "Bookman Old Style";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 38px;
+        text-align: center;
+        color: #474646;
+        margin-bottom: 5px;
+    }
+    .title2 {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 130%;
+        text-align: center;
+        color: #474646;
+        margin-bottom: 84px;
+    }
+    .loginBtn {
+        margin-bottom: 200px;
+    }
+}

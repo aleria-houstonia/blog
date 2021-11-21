@@ -1,0 +1,16 @@
+.btn {
+    width: 343px;
+    height: 53px;
+    background: #474646;
+    border-radius: 6px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #ffffff;
+}
