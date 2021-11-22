@@ -5,7 +5,7 @@ import Logo from "../comps/Logo";
 import styles from "../styles/Login.module.scss";
 import MainContainer from "../comps/MainContainer";
 import axios from "axios";
-import useAxios from "use-axios";
+import useAxios from "axios-hooks";
 //user1 111111
 const Login = () => {
     const handleSubmit = (event) => {
@@ -19,7 +19,18 @@ const Login = () => {
         console.log(newUser);
         postUser(newUser);
     };
+
     const postUser = (newUser) => {
+        // const [{ data, loading, error }, execute] = useAxios(
+        //     {
+        //         method: "POST",
+        //         baseURL: "https://m-blog.volki.digital",
+        //         url: "/api/v1/user/auth",
+        //     },
+        //     { manual: true }
+        // );
+        // executePost(newUser);
+
         axios
             .post(
                 "https://m-blog.volki.digital/api/v1/user/auth",
