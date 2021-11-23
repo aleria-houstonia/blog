@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const Back = () => {
+export const Back = () => {
     return (
         <div>
             <svg
@@ -18,5 +18,3 @@ const Back = () => {
         </div>
     );
 };
-
-export default Back;

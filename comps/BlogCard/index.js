@@ -1,6 +1,7 @@
-import React from "react";
-import styles from "../styles/BlogCard.module.css";
-export default function BlogCard() {
+import React from 'react';
+import styles from 'styles/BlogCard.module.css';
+
+export const BlogCard = () => {
     return (
         <div className={styles.blogCard}>
             <div className={styles.blogTitleImg}>
@@ -19,4 +20,4 @@ export default function BlogCard() {
             </div>
         </div>
     );
-}
+};

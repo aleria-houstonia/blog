@@ -1,7 +1,7 @@
-import React from "react";
-import type { NextPage } from "next";
-import Blog from "../comps/Blog";
-import MainContainer from "../comps/MainContainer";
+import React from 'react';
+import type { NextPage } from 'next';
+import { Blog } from 'Components/Blog';
+import { MainContainer } from 'Components/MainContainer';
 
 const Home: NextPage = () => {
     return (

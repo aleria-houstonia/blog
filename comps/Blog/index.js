@@ -1,12 +1,13 @@
-import React from "react";
-import BlogCard from "../comps/BlogCard";
-import Button from "../comps/Button/Button";
-import Input from "../comps/Input/Input";
-import MainContainer from "../comps/MainContainer";
-import ToolHeader from "../comps/ToolHeader";
-import styles from "../styles/Blog.module.css";
+import React from 'react';
+import { BlogCard } from 'Components/BlogCard';
+import { Button } from 'Components/Button';
+import { Input } from 'Components/Input';
+import { MainContainer } from 'Components/MainContainer';
+import { ToolHeader } from 'Components/ToolHeader';
+import styles from 'styles/Blog.module.css';
+import axios from 'axios';
 
-const Blog = () => {
+export const Blog = () => {
     return (
         <MainContainer>
             <div className={styles.blogList}>
@@ -17,7 +18,6 @@ const Blog = () => {
                 <BlogCard />
                 <BlogCard />
                 <BlogCard />
-
                 <div className={styles.blogDownload}>
                     <Button text="Загрузить еще" type="button" />
                 </div>
@@ -25,5 +25,3 @@ const Blog = () => {
         </MainContainer>
     );
 };
-
-export default Blog;

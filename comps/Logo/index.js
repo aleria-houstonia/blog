@@ -1,5 +1,6 @@
-import React from "react";
-export default function Logo() {
+import React from 'react';
+
+export const Logo = () => {
     return (
         <svg
             width="56"
@@ -25,4 +26,4 @@ export default function Logo() {
             />
         </svg>
     );
-}
+};

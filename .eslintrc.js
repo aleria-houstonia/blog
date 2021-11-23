@@ -112,7 +112,7 @@ module.exports = {
         ],
         "react/jsx-props-no-spreading": "off",
         "react/prop-types": "off",
-        "jsx-quotes": ["error", "double"],
+        "jsx-quotes": ["error", "prefer-double"],
         "no-restricted-syntax": "off",
         "no-mixed-operators": "off",
         "no-console": "off",
@@ -150,7 +150,7 @@ module.exports = {
         "import/newline-after-import": [
             "error",
             {
-                count: 0,
+                count: 1,
             },
         ],
         "import/extensions": "off",

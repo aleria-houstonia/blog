@@ -1,7 +1,8 @@
-import React from "react";
-import styles from "../styles/BlogDesc.module.css";
-import ToolBlogList from "../comps/ToolBlogList";
-const BlogDesciption = () => {
+import React from 'react';
+import styles from 'styles/BlogDesc.module.css';
+import { ToolBlogList } from 'Components/ToolBlogList';
+
+export default function BlogDesciption() {
     return (
         <div className={styles.blogDesc}>
             <ToolBlogList />
@@ -38,6 +39,4 @@ const BlogDesciption = () => {
             </div>
         </div>
     );
-};
-
-export default BlogDesciption;
+}

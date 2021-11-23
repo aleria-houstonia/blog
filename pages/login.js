@@ -1,12 +1,32 @@
-import React from "react";
-import Button from "../comps/Button/Button";
-import Input from "../comps/Input/Input";
-import Logo from "../comps/Logo";
-import styles from "../styles/Login.module.scss";
-import MainContainer from "../comps/MainContainer";
-import axios from "axios";
-import useAxios from "use-axios";
-//user1 111111
+import React from 'react';
+import axios from 'axios';
+import API from 'lib/api';
+import { Button } from 'Components/Button';
+import { Input } from 'Components/Input';
+import { MainContainer } from 'Components/MainContainer';
+import styles from 'styles/Login.module.scss';
+import { Logo } from 'Components/Logo';
+
+const postUser = (newUser) => {
+    axios
+        .post(
+            `${API}/api/v1/user/auth`,
+            newUser,
+
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: 'Basic Og==',
+                },
+            }
+        )
+        .then((res) => {
+            localStorage.setItem('mytoken', res.data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+};
 const Login = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -15,30 +35,10 @@ const Login = () => {
             ...Array.from(formEntries, ([name, value]) => ({ [name]: value }))
         );
 
-        let newUser = JSON.stringify(formData);
-        console.log(newUser);
+        const newUser = JSON.stringify(formData);
         postUser(newUser);
     };
-    const postUser = (newUser) => {
-        axios
-            .post(
-                "https://m-blog.volki.digital/api/v1/user/auth",
-                newUser,
 
-                {
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: "Basic Og==",
-                    },
-                }
-            )
-            .then((res) => {
-                localStorage.setItem("mytoken", res.data);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    };
     return (
         <>
             <MainContainer>
@@ -46,6 +46,7 @@ const Login = () => {
                     <div className="logo">
                         <Logo />
                     </div>
+
                     <div className={styles.title1}>Войдите</div>
                     <div className={styles.title2}>
                         Авторизируйтесь, с помощью логина
