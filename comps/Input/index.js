@@ -1,6 +1,7 @@
-import React from "react";
-import styles from "../../styles/Input.module.css";
-export default function Input({ placeholder, name }) {
+import React from 'react';
+import styles from 'styles/Input.module.css';
+
+export const Input = ({ placeholder, name }) => {
     return (
         <input
             type="text"
@@ -9,4 +10,4 @@ export default function Input({ placeholder, name }) {
             name={name}
         />
     );
-}
+};

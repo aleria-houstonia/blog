@@ -1,5 +1,6 @@
-import React from "react";
-const EditLogo = () => {
+import React from 'react';
+
+export const EditLogo = () => {
     return (
         <div>
             <svg
@@ -25,5 +26,3 @@ const EditLogo = () => {
         </div>
     );
 };
-
-export default EditLogo;
