@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
-
 .loginCenter {
     max-width: 375px;
     min-height:100vh;
@@ -8,9 +7,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 100px;
+      margin-bottom: 100px;
     .logo {
-        margin-top: 54px ;
+        margin-top: 54px;
         margin-bottom: 19px;
     }
     .text{
@@ -23,7 +22,7 @@
         margin-bottom: 5px;
         margin-top: 25px;
         text-align: center;
-        margin-bottom:45px;
+        // margin-bottom:45px;
     }
     .loginInpDesc{
         font-family: "Montserrat";
@@ -31,7 +30,6 @@
         font-weight: 500;
         font-size: 13px;
         line-height: 120%;
-        color: #BAABA0;
         margin-bottom: 5px;
     }
     .loginTitle {
@@ -63,56 +61,20 @@
         color: #474646;
         margin-bottom: 84px;
     }
-    .divInp{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
     .loginBtn{
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    
 }
-
 @media screen and (max-width: 320px){
-    .loginCenter{
-        max-width: 320px;
-        height:100vh;
-        margin-bottom: 100px;
+    .title1{
+        font-size: 27px !important;
+        line-height: 34px;
     }
-    .logo {
-        margin-top: 80px !important;
-        margin-bottom: 19px;
-    }
-    .text{
-        font-size: 9px;
-        line-height: 120%;
-        margin-top: 10px;
-        margin-bottom:35px;
-    }
-    .loginInpDesc{
+    .title2{
         font-size: 13px;
-        line-height: 120%;
-        margin-bottom: 5px;
+        line-height: 100%;
+        margin-bottom: 27px  !important;
     }
-    .loginTitle {
-        font-size: 17px;
-        line-height: 120%;
-        margin-bottom: 5px;
-    }
-    .title1 {
-        font-size: 27px;
-        line-height: 38px;
-        margin-bottom: 5px;
-    }
-    .title2 {
-        font-size: 12px;
-        line-height: 130%;
-        margin-bottom: 84px;
-    }
-    
-
 }
-

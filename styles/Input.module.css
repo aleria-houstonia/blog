@@ -10,8 +10,8 @@
     justify-content: center;
     margin-bottom: 30px;
     outline: none;
-    text-align: start;
-    /* text-align: start; */
+    text-align: start; 
+    padding-left: 40px;
 }
 
 .inputElem::placeholder {
@@ -21,6 +21,15 @@
     font-size: 17px;
     line-height: 130%;
     color: #9d9d9d;
-    /* text-align: center; */
-    padding-left: 20px;
+}
+@media screen and (max-width: 320px){
+    .inputElem {
+        width: 280px;
+        height: 45px;
+        margin-bottom: 30px;
+    }
+    .inputElem::placeholder {
+        font-size: 13px;
+    }
+
 }

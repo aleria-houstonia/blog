@@ -1,13 +1,17 @@
 import React from 'react';
 import axios from 'axios';
-import API from 'lib/api';
+import { useForm } from 'react-hook-form';
+import Link from 'next/link';
+
 import { Button } from 'Components/Button';
-import { Input } from 'Components/Input';
 import { MainContainer } from 'Components/MainContainer';
 import styles from 'styles/Login.module.scss';
 import { Logo } from 'Components/Logo';
+import style from 'styles/Input.module.css';
+import API from 'lib/api';
 
-const postUser = (newUser) => {
+
+const postUser = newUser => {
     axios
         .post(
             `${API}/api/v1/user/auth`,
@@ -18,24 +22,23 @@ const postUser = (newUser) => {
                     'Content-Type': 'application/json',
                     Authorization: 'Basic Og==',
                 },
-            }
+            },
         )
-        .then((res) => {
+        .then(res => {
             localStorage.setItem('mytoken', res.data);
         })
-        .catch(function (error) {
+        .catch(error => {
             console.log(error);
         });
 };
 const Login = () => {
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const formEntries = new FormData(event.currentTarget).entries();
-        const formData = Object.assign(
-            ...Array.from(formEntries, ([name, value]) => ({ [name]: value }))
-        );
-
-        const newUser = JSON.stringify(formData);
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+    const onSubmit = data => {
+        const newUser = JSON.stringify(data);
         postUser(newUser);
     };
 
@@ -43,22 +46,43 @@ const Login = () => {
         <>
             <MainContainer>
                 <div className={styles.loginCenter}>
-                    <div className="logo">
+                    <div className={styles.logo}>
                         <Logo />
                     </div>
 
                     <div className={styles.title1}>Войдите</div>
                     <div className={styles.title2}>
-                        Авторизируйтесь, с помощью логина
+                        Авторизируйтесь, с помощью почты
                     </div>
-                    <form className="form" onSubmit={handleSubmit}>
-                        <div className={styles.loginTitle}>Логин</div>
-                        <Input placeholder="Введите логин" name="nickname" />
-                        <div className={styles.loginTitle}>Пароль</div>
-                        <Input placeholder="Введите пароль" name="password" />
-                        <div className={styles.loginBtn}>
-                            <Button text="Войти" type="submit" />
+
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className={styles.loginInpDesc}>Почта</div>
+                        <div className={styles.divInp}>
+                        <input
+                            className={style.inputElem}
+                            placeholder="Введите логин"
+                            {...register('nickname')}
+                        />
                         </div>
+                        <div className={styles.loginInpDesc}>Пароль</div>
+                        <div className={styles.divInp}>
+                        <input
+                            className={style.inputElem}
+                            placeholder="Введите пароль"
+                            {...register('password', { required: true })}
+                        /></div>
+                        {errors.exampleRequired && (
+                            <span>This field is required</span>
+                        )}
+                        <Link href="/">
+                            <div className={styles.loginBtn}>
+                                 <Button text="Войти" type="submit" />
+                            </div>
+                        </Link>
+                        <div className={styles.text}>
+                            <Link href="/signup">Создать аккаунт</Link>
+                        </div>
+
                     </form>
                 </div>
             </MainContainer>
