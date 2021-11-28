@@ -43,3 +43,33 @@
     -webkit-box-orient: vertical;
     white-space: normal;
 }
+
+@media screen and (max-width: 320px){
+    .blogCard {
+        width: 320px;
+    }
+ 
+    .blogTitleImg img {
+        height: 180px;
+        width: 290px;
+        border-radius: 8px;
+    }
+    .blogTitleImg img {
+        height: 222px;
+        width: 373px;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+    .blogCardTitle {
+        font-size: 24px;
+        margin-top: 12px;
+    }
+    .blogCardDescription {
+        margin-top: 7px;
+        font-size: 15px;
+        line-height: 130%;
+        height: 40px;
+        width: 290px;
+    }
+    
+}

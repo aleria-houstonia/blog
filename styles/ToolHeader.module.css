@@ -5,6 +5,13 @@
     padding: 14px 20px;
 }
 .imgTool {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
+}
+
+@media screen and (max-width: 320px){
+    .imgTool {
+        width: 29px;
+        height: 29px;
+    }
 }

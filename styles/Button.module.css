@@ -11,6 +11,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     color: #ffffff;
+}
+@media screen and (max-width: 320px){
+    .btn {
+        width: 250px;
+        height: 45px;
+        font-size: 14px;
+    }
+
 }

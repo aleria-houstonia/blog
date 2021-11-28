@@ -4,13 +4,13 @@ import Link from 'next/link';
 
 import { Button } from 'Components/Button';
 import { MainContainer } from 'Components/MainContainer';
-import styles from 'styles/Login.module.scss';
+import { Input } from 'Components/Input';
 import { Logo } from 'Components/Logo';
-import style from 'styles/Input.module.css';
-// eslint-disable-next-line import/named
-import { postUser } from 'lib';
+import styles from 'styles/Signup.module.scss';
 
-const Login = () => {
+import { postNewUser } from '../lib';
+
+const Signup = () => (
     const {
         register,
         handleSubmit,
@@ -18,7 +18,7 @@ const Login = () => {
     } = useForm();
     const onSubmit = data => {
         const newUser = JSON.stringify(data);
-        postUser(newUser);
+        postNewUser(newUser);
     };
 
     return (
@@ -29,11 +29,10 @@ const Login = () => {
                         <Logo />
                     </div>
 
-                    <div className={styles.title1}>Войдите</div>
+                    <div className={styles.title1}>Зарегистрируйтесь</div>
                     <div className={styles.title2}>
-                        Авторизируйтесь, с помощью почты
+                        Зарегистрируйтесь, с помощью почты
                     </div>
-
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className={styles.loginInpDesc}>Почта</div>
                         <div className={styles.divInp}>
@@ -44,31 +43,26 @@ const Login = () => {
                             />
                         </div>
                         <div className={styles.loginInpDesc}>Пароль</div>
-                        <div className={styles.divInp}>
+                          <div className={styles.divInp}>
                             <input
                                 className={style.inputElem}
                                 placeholder="Введите пароль"
-                                {...register('password', { required: true })}
+                                {...register('nickname')}
                             />
-
                         </div>
-                        {errors.exampleRequired && (
-                            <span>This field is required</span>
-                        )}
-                        {/* <Link href="/"> */}
                         <div className={styles.loginBtn}>
-                            <Button text="Войти" type="submit" />
+                            <Link href="/">
+                                <Button text="Зарегистрироваться" type="submit" />
+                            </Link> ;
                         </div>
-                        {/* </Link> */}
                         <div className={styles.text}>
-                            <Link href="/signup">Создать аккаунт</Link>
+                            <Link href="/login">Уже есть аккаунт? </Link>
                         </div>
-
                     </form>
                 </div>
             </MainContainer>
         </>
     );
-};
 
-export default Login;
+
+export default Signup;
