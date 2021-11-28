@@ -53,11 +53,13 @@ const Login = () => {
                     </div>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className={styles.loginTitle}>Логин</div>
                         <input
                             className={style.inputElem}
                             placeholder="Введите логин"
                             {...register('nickname')}
                         />
+                        <div className={styles.loginTitle}>Пароль</div>
                         <input
                             className={style.inputElem}
                             placeholder="Введите пароль"
@@ -67,7 +69,9 @@ const Login = () => {
                             <span>This field is required</span>
                         )}
 
-                        <Button text="Войти" type="submit" />
+                        <div className={styles.loginBtn}>
+                            <Button text="Войти" type="submit" />
+                        </div>
                     </form>
                 </div>
             </MainContainer>
