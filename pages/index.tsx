@@ -4,7 +4,6 @@ import type { NextPage } from 'next';
 import { Blog } from 'Components/Blog';
 import { MainContainer } from 'Components/MainContainer';
 
-
 const Home: NextPage = () => (
     <div>
         <MainContainer>

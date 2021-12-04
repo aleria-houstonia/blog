@@ -7,7 +7,7 @@ import { Button } from 'Components/Button';
 import { Input } from 'Components/Input';
 import { MainContainer } from 'Components/MainContainer';
 import styles from 'styles/Login.module.scss';
-import { Logo } from 'Components/Logo';
+import { Logo } from 'Components/Icon/Logo';
 
 const Signup = () => {
     const { handleSubmit, control } = useForm();
@@ -21,7 +21,9 @@ const Signup = () => {
             <MainContainer>
                 <div className={styles.loginCenter}>
                     <div className={styles.logo}>
-                        <Logo />
+                        <Link href="/">
+                            <Logo />
+                        </Link>
                     </div>
 
                     <div className={styles.title1}>Зарегистрируйтесь</div>

@@ -6,7 +6,7 @@ import { Button } from 'Components/Button';
 import { Input } from 'Components/Input';
 import { MainContainer } from 'Components/MainContainer';
 import styles from 'styles/Login.module.scss';
-import { Logo } from 'Components/Logo';
+import { Logo } from 'Components/Icon/Logo';
 import { postUser } from 'lib';
 
 const Login = () => {
@@ -21,7 +21,9 @@ const Login = () => {
             <MainContainer>
                 <div className={styles.loginCenter}>
                     <div className={styles.logo}>
-                        <Logo />
+                        <Link href="/">
+                            <Logo />
+                        </Link>
                     </div>
 
                     <div className={styles.title1}>Войдите</div>
@@ -52,7 +54,9 @@ const Login = () => {
                         </div>
                         {/* </Link> */}
                         <div className={styles.text}>
-                            <Link href="/signup">Создать аккаунт</Link>
+                            <Link href="/signup" passHref>
+                                Создать аккаунт
+                            </Link>
                         </div>
                     </form>
                 </div>

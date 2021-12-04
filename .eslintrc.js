@@ -1,35 +1,39 @@
-const path = require("path");
+const path = require('path');
 
-const extensions = [".js", ".ts", ".tsx", ".json", ".css", ".scss"];
+const extensions = ['.js', '.ts', '.tsx', '.json', '.css', '.scss'];
 
-const a11yOff = Object.keys(require("eslint-plugin-jsx-a11y").rules).reduce(
+const a11yOff = Object.keys(require('eslint-plugin-jsx-a11y').rules).reduce(
     (acc, rule) => {
-        acc[`jsx-a11y/${rule}`] = "off";
+        acc[`jsx-a11y/${rule}`] = 'off';
         return acc;
     },
     {}
 );
 
 module.exports = {
+    globals: {
+        window: true,
+        document: true,
+    },
     env: {
         browser: true,
         es2021: true,
         node: true,
     },
     extends: [
-        "eslint:recommended",
-        "next",
-        "plugin:react/recommended",
-        "airbnb",
+        'eslint:recommended',
+        'next',
+        'plugin:react/recommended',
+        'airbnb',
     ],
     settings: {
-        "import/extensions": extensions,
-        "import/resolver": {
+        'import/extensions': extensions,
+        'import/resolver': {
             alias: {
                 map: [
-                    ["Components", path.join(__dirname, "comps")],
-                    ["Lib", path.join(__dirname, "lib")],
-                    ["styles", path.join(__dirname, "styles")],
+                    ['Components', path.join(__dirname, 'comps')],
+                    ['Lib', path.join(__dirname, 'lib')],
+                    ['styles', path.join(__dirname, 'styles')],
                 ],
                 extensions,
             },
@@ -38,24 +42,24 @@ module.exports = {
             },
         },
     },
-    parser: "@typescript-eslint/parser",
+    parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
         },
         ecmaVersion: 12,
-        sourceType: "module",
+        sourceType: 'module',
     },
-    plugins: ["react", "@typescript-eslint"],
+    plugins: ['react', '@typescript-eslint'],
     rules: {
         ...a11yOff,
-        camelcase: "off",
-        "react/require-default-props": "off",
-        "@typescript-eslint/camelcase": ["off"],
-        indent: "off",
-        "linebreak-style": "off",
-        "max-len": [
-            "warn",
+        camelcase: 'off',
+        'react/require-default-props': 'off',
+        '@typescript-eslint/camelcase': ['off'],
+        indent: 'off',
+        'linebreak-style': 'off',
+        'max-len': [
+            'warn',
             {
                 code: 100,
                 tabWidth: 4,
@@ -66,104 +70,104 @@ module.exports = {
                 ignoreTemplateLiterals: true,
             },
         ],
-        "arrow-parens": [
-            "error",
-            "as-needed",
+        'arrow-parens': [
+            'error',
+            'as-needed',
             {
                 requireForBlockBody: false,
             },
         ],
-        "object-curly-newline": [
-            "error",
+        'object-curly-newline': [
+            'error',
             {
                 multiline: true,
                 consistent: true,
             },
         ],
-        curly: ["error", "multi-or-nest"],
-        "nonblock-statement-body-position": ["error", "below"],
-        "operator-linebreak": [
-            "error",
-            "after",
+        curly: ['error', 'multi-or-nest'],
+        'nonblock-statement-body-position': ['error', 'below'],
+        'operator-linebreak': [
+            'error',
+            'after',
             {
                 overrides: {
-                    "?": "before",
-                    ":": "before",
+                    '?': 'before',
+                    ':': 'before',
                 },
             },
         ],
-        "react/jsx-filename-extension": "off",
-        "react/jsx-indent": ["error", 4],
-        "react/jsx-indent-props": ["error", 4],
-        "react/sort-comp": [
-            "error",
+        'react/jsx-filename-extension': 'off',
+        'react/jsx-indent': ['error', 4],
+        'react/jsx-indent-props': ['error', 4],
+        'react/sort-comp': [
+            'error',
             {
                 order: [
-                    "instance-variables",
-                    "static-methods",
-                    "lifecycle",
-                    "everything-else",
-                    "rendering",
+                    'instance-variables',
+                    'static-methods',
+                    'lifecycle',
+                    'everything-else',
+                    'rendering',
                 ],
                 groups: {
-                    rendering: ["/^render.+$/", "render"],
+                    rendering: ['/^render.+$/', 'render'],
                 },
             },
         ],
-        "react/jsx-props-no-spreading": "off",
-        "react/prop-types": "off",
-        "jsx-quotes": ["error", "prefer-double"],
-        "no-restricted-syntax": "off",
-        "no-mixed-operators": "off",
-        "no-console": "off",
-        "no-shadow": "off",
-        "no-nested-ternary": "off",
-        "no-confusing-arrow": "off",
-        "no-underscore-dangle": "off",
-        "no-use-before-define": "off",
-        "no-multiple-empty-lines": [
-            "error",
+        'react/jsx-props-no-spreading': 'off',
+        'react/prop-types': 'off',
+        'jsx-quotes': ['error', 'prefer-double'],
+        'no-restricted-syntax': 'off',
+        'no-mixed-operators': 'off',
+        'no-console': 'off',
+        'no-shadow': 'off',
+        'no-nested-ternary': 'off',
+        'no-confusing-arrow': 'off',
+        'no-underscore-dangle': 'off',
+        'no-use-before-define': 'off',
+        'no-multiple-empty-lines': [
+            'error',
             {
                 max: 2,
             },
         ],
-        "implicit-arrow-linebreak": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-use-before-define": ["error"],
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/no-var-requires": "off",
-        "@typescript-eslint/indent": [
-            "error",
+        'implicit-arrow-linebreak': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-use-before-define': ['error'],
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/indent': [
+            'error',
             4,
             {
                 SwitchCase: 1,
             },
         ],
-        "@typescript-eslint/ban-ts-comment": "off",
-        "import/no-unresolved": [
-            "warn",
+        '@typescript-eslint/ban-ts-comment': 'off',
+        'import/no-unresolved': [
+            'warn',
             {
                 commonjs: true,
                 caseSensitive: true,
             },
         ],
-        "import/newline-after-import": [
-            "error",
+        'import/newline-after-import': [
+            'error',
             {
                 count: 1,
             },
         ],
-        "import/extensions": "off",
-        "import/prefer-default-export": "off",
-        "import/order": [
-            "warn",
+        'import/extensions': 'off',
+        'import/prefer-default-export': 'off',
+        'import/order': [
+            'warn',
             {
                 groups: [
-                    ["builtin", "external"],
-                    "internal",
-                    ["parent", "sibling", "index"],
+                    ['builtin', 'external'],
+                    'internal',
+                    ['parent', 'sibling', 'index'],
                 ],
-                "newlines-between": "always",
+                'newlines-between': 'always',
             },
         ],
     },
