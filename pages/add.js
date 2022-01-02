@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { Button } from 'Components/Button';
 import { MyInp } from 'Components/Inp';
 import { MainContainer } from 'Components/MainContainer';
-import { ToolHeader } from 'Components/ToolBlogList';
+import { ToolBlogList } from 'Components/ToolBlogList';
 import { postBlog } from 'lib';
 
 const TextEditor = dynamic(() => import('../comps/Editor/index'), {
@@ -15,21 +15,20 @@ const AddPost = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [preview, setPreview] = useState('');
+
     const createPost = () => {
         const newPost = {
             title,
             body,
             preview,
-            image: null,
+            image: JSON.stringify(null),
         };
-        const newData = JSON.stringify(newPost);
-        postBlog(newData);
-        console.log(newData);
+        postBlog(JSON.stringify(newPost));
     };
     return (
         <MainContainer>
             <div style={{ marginBottom: '26px' }}>
-                <ToolHeader />
+                <ToolBlogList />
             </div>
             <MyInp
                 placeholder="title"

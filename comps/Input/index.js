@@ -14,9 +14,9 @@ export const Input = ({ placeholder, name, control }) => {
     });
     return (
         <input
-            onChange={onChange} // send value to hook form
-            onBlur={onBlur} // notify when input is touched/blur
-            value={value} // input value
+            onChange={onChange}
+            onBlur={onBlur}
+            value={value}
             inputRef={ref}
             type="text"
             className={styles.inputElem}

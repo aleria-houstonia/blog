@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { Button } from 'Components/Button';
 import { Input } from 'Components/Input';
@@ -11,9 +12,10 @@ import { postUser } from 'lib';
 
 const Login = () => {
     const { handleSubmit, control } = useForm();
+    const router = useRouter();
     function onSubmit(data) {
         const newUser = JSON.stringify(data);
-        postUser(newUser);
+        postUser(newUser, router);
     }
 
     return (
@@ -21,9 +23,9 @@ const Login = () => {
             <MainContainer>
                 <div className={styles.loginCenter}>
                     <div className={styles.logo}>
-                        <Link href="/">
+                        <div onClick={() => router.push('/')}>
                             <Logo />
-                        </Link>
+                        </div>
                     </div>
 
                     <div className={styles.title1}>Войдите</div>

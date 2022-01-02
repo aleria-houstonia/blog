@@ -3,7 +3,7 @@
     height: 53px;
     background: #474646;
     border-radius: 6px;
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -12,12 +12,12 @@
     justify-content: center;
     align-items: center;
     color: #ffffff;
+    margin-bottom: 10px;
 }
-@media screen and (max-width: 320px){
+@media screen and (max-width: 320px) {
     .btn {
         width: 250px;
         height: 45px;
         font-size: 14px;
     }
-
 }

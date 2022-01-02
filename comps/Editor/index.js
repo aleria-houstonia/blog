@@ -26,6 +26,7 @@ export default function TextEditor({ val, handleDesc }) {
             ContentState.createFromBlockArray(convertFromHTML(`${text}`))
         )
     );
+
     useEffect(() => {
         setEditorState(
             EditorState.createWithContent(

@@ -6,7 +6,7 @@ import { Markup } from 'interweave';
 import API from 'lib/api';
 import styles from 'styles/BlogDesc.module.css';
 import { MainContainer } from 'Components/MainContainer';
-import { ToolHeader } from 'Components/ToolBlogList';
+import { ToolBlogList } from 'Components/ToolBlogList';
 
 export default function () {
     const { query } = useRouter();
@@ -19,11 +19,11 @@ export default function () {
     useEffect(() => {
         getDetails(query.id);
     }, []);
-    console.log(details.body);
+    console.log(details);
     return (
         <MainContainer>
             <div className={styles.blogDesc}>
-                <ToolHeader />
+                <ToolBlogList id={query.id} />
                 <div className={styles.blogDescImg}>
                     <img src="http://almode.ru/uploads/posts/2021-03/1615880258_58-p-natsionalnaya-odezhda-mordva-erzya-63.jpg" />
                 </div>

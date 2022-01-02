@@ -1,34 +1,37 @@
 import React from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { Back } from 'Components/Icon/Back';
 import { EditLogo } from 'Components/Icon/EditLogo';
 import { Logo } from 'Components/Icon/Logo';
 import styles from 'styles/ToolHeader.module.css';
+import { checkToken } from 'lib';
 
-export function ToolHeader() {
+export function ToolBlogList({ id }) {
     const router = useRouter();
-    function checkToken() {
-        if (typeof window !== 'undefined') {
-            const token = localStorage.getItem('mytoken');
-            const res = token !== null;
-            return res;
-        }
-        return false;
-    }
     return (
         <div className={styles.main}>
-            <Link href="/" passHref>
+            <div
+                onClick={() => {
+                    router.back();
+                }}
+            >
                 <Back />
-            </Link>
+            </div>
+
             <Logo />
             {router.asPath === '/add' ? (
                 <div />
-            ) : checkToken ? (
-                <div />
+            ) : checkToken() ? (
+                <div
+                    onClick={() => {
+                        router.push(`/edit/${id}`);
+                    }}
+                >
+                    <EditLogo />
+                </div>
             ) : (
-                <EditLogo />
+                <div />
             )}
         </div>
     );
