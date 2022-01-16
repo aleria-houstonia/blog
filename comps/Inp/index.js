@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from 'styles/Input.module.css';
+import styles from 'styles/Comps/Input.module.css';
 
 export function MyInp({ placeholder, name, handleEvent }) {
     return (

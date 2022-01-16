@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import { Button } from 'Components/Button';
 import { Input } from 'Components/Input';
 import { MainContainer } from 'Components/MainContainer';
-import styles from 'styles/Login.module.scss';
+import styles from 'styles/Pages/Login.module.scss';
 import { Logo } from 'Components/Icon/Logo';
 import { postUser } from 'lib';
 

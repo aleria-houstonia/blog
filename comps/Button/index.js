@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from 'styles/Button.module.css';
+import styles from 'styles/Comps/Button.module.css';
 
 export const Button = ({ text, type, handleEvent }) => (
     <button

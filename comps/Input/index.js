@@ -1,7 +1,7 @@
 import React from 'react';
 import { useController } from 'react-hook-form';
 
-import styles from 'styles/Input.module.css';
+import styles from 'styles/Comps/Input.module.css';
 
 export const Input = ({ placeholder, name, control }) => {
     const {

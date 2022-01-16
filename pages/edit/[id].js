@@ -28,7 +28,7 @@ export default function () {
 
     useEffect(() => {
         getDetails(query.id);
-    }, []);
+    }, [query.id]);
     const router = useRouter();
     function getEdits() {
         const newBlog = {
@@ -36,6 +36,7 @@ export default function () {
             preview,
             title,
             body,
+            image: JSON.stringify(null),
         };
         setEditedBlog(newBlog);
     }

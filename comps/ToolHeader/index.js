@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import { AddLogo } from 'Components/Icon/AddLogo';
 import { Logo } from 'Components/Icon/Logo';
-import styles from 'styles/ToolHeader.module.css';
+import styles from 'styles/Comps/ToolHeader.module.css';
 import { checkToken } from 'lib';
 
 export const ToolHeader = () => {

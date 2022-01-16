@@ -7,7 +7,7 @@ import { postNewUser } from 'lib';
 import { Button } from 'Components/Button';
 import { Input } from 'Components/Input';
 import { MainContainer } from 'Components/MainContainer';
-import styles from 'styles/Login.module.scss';
+import styles from 'styles/Pages/Login.module.scss';
 import { Logo } from 'Components/Icon/Logo';
 
 const Signup = () => {
@@ -50,7 +50,7 @@ const Signup = () => {
                             />
                         </div>
                         <div className={styles.loginBtn}>
-                            <Link href="/">
+                            <Link href="/" passHref>
                                 <Button
                                     text="Зарегистрироваться"
                                     type="submit"

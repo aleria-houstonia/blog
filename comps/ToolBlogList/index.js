@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { Back } from 'Components/Icon/Back';
 import { EditLogo } from 'Components/Icon/EditLogo';
 import { Logo } from 'Components/Icon/Logo';
-import styles from 'styles/ToolHeader.module.css';
+import styles from 'styles/Comps/ToolHeader.module.css';
 import { checkToken } from 'lib';
 
 export function ToolBlogList({ id }) {
